@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const registryURL = "https://ypgateway.mybluemix.net/getMicroServicesList";
 
-exports.list = async (req, res, next) => {
+exports.list = (req, res, next) => {
     try {
         console.log('Get list of APIs for a dropdown');
         axios.get(registryURL)

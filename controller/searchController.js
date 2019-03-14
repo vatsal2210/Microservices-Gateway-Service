@@ -6,7 +6,7 @@ const restaurantsServiceURL = '';
 const museumsServiceURL = '';
 const companies = '';
 
-exports.search = async (req, res, next) => {
+exports.search = (req, res, next) => {
     try {
         const serviceName = req.body.serviceName;
         const searchParam = req.body.searchParam;
