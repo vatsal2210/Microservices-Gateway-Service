@@ -1,5 +1,5 @@
 const axios = require('axios');
-const authURL = "192.168.0.23:8080/user/verify";
+const authURL = "/user/verify";
 
 module.exports = (req, res, next) => {
     const authHeader = req.get("Authorization");
