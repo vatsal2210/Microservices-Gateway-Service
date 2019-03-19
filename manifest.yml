@@ -5,6 +5,6 @@ applications:
   name: western01gatewaypipeline
   buildpack: sdk-for-nodejs
   command: npm start
-  memory: 80MB
+  memory: 84MB
   domain: mybluemix.net
   host: western01-gateway-pipeline
