@@ -7,6 +7,7 @@ const museumsServiceURL = '';
 const companies = '';
 
 exports.search = (req, res, next) => {
+    console.log('search ', req.body);
     try {
         const serviceName = req.body.serviceName;
         const searchParam = req.body.searchParam;
