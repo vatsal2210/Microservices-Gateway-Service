@@ -2,8 +2,8 @@ const axios = require('axios');
 const services = ["skiResort", "restaurants", "museums", "companies"];
 
 const skiResortServiceURL = 'https://ypgateway.mybluemix.net:443/ski/resort/search';
-const restaurantsServiceURL = '';
-const museumsServiceURL = '';
+const restaurantsServiceURL = 'https://ypgateway.mybluemix.net:443/rest/restaurant/search';
+const museumsServiceURL = 'https://ypgateway.mybluemix.net:443/museum/museum/search';
 const companies = '';
 
 exports.search = (req, res, next) => {
@@ -36,14 +36,7 @@ exports.search = (req, res, next) => {
             var url;
             if (serviceName.includes("skiResort")) {
                 console.log('In skiResort');
-
-                const price = req.body.price;
-                const resortname = req.body.resortname;
-                const country = req.body.country;
-
                 url = skiResortServiceURL;
-                //searchData = `${query}?price=${price}&resortname=${resortname}&country=${country}`;
-                searchData = query;
             }
 
             if (serviceName.includes("restaurants")) {
@@ -62,8 +55,9 @@ exports.search = (req, res, next) => {
             }
 
             console.log('url ', url);
+            console.log('searchData ', searchData);
             axios.post(url, {
-                    query: searchData
+                    query: query
                 })
                 .then(function (response) {
                     console.log('/search', response.data);
