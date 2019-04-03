@@ -4,7 +4,7 @@ const services = ["skiResort", "restaurants", "museums", "companies"];
 const skiResortServiceURL = 'https://ypgateway.mybluemix.net:443/ski/resort/search';
 const restaurantsServiceURL = 'https://ypgateway.mybluemix.net:443/rest/restaurant/search';
 const museumsServiceURL = 'https://ypgateway.mybluemix.net:443/museum/museum/search';
-const companies = '';
+const company = 'https://ypgateway.mybluemix.net:443/company/company/search';
 
 exports.search = (req, res, next) => {
     console.log('search ', req.body);
@@ -49,9 +49,9 @@ exports.search = (req, res, next) => {
                 url = museumsServiceURL;
             }
 
-            if (serviceName.includes("fortuneCompanies")) {
-                console.log('In fortuneCompanies');
-                url = fortuneCompanies;
+            if (serviceName.includes("company")) {
+                console.log('In company');
+                url = company;
             }
 
             console.log('url ', url);
