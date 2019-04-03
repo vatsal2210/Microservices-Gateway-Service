@@ -19,12 +19,6 @@ exports.search = (req, res, next) => {
                 code: 200,
                 message: 'Please select service Name'
             });
-
-            // } else if (!services.includes(serviceName)) {
-            //     res.send({
-            //         code: 500,
-            //         message: 'Please select valid service'
-            //     });
         } else if (query == "" || query == undefined) {
             console.log('Search Params are invalid');
             res.send({
@@ -60,7 +54,6 @@ exports.search = (req, res, next) => {
                     query: query
                 })
                 .then(function (response) {
-                    console.log('/search', response.data);
                     res.send(response.data);
                 })
                 .catch(function (error) {
