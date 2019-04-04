@@ -6,7 +6,7 @@ const restaurantsServiceURL = 'https://ypgateway.mybluemix.net:443/rest/restaura
 const museumsServiceURL = 'https://ypgateway.mybluemix.net:443/museum/museum/search';
 const company = 'https://ypgateway.mybluemix.net:443/company/company/search';
 
-exports.search = async (req, res, next) => {
+exports.search = (req, res, next) => {
     console.log('search ', req.body);
     try {
         const serviceName = req.body.serviceName;
