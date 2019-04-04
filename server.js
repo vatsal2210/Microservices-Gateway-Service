@@ -45,8 +45,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-const serviceRoute = require("./routers/service");
-
 app.use(
   bodyParser.json({
     limit: 5242880
@@ -61,6 +59,8 @@ app.use(
 
 app.use(helmet());
 
+
+const serviceRoute = require("./routers/service");
 app.use("/service", serviceRoute);
 
 app.use((error, req, res, next) => {
