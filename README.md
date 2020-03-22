@@ -1,4 +1,4 @@
-# western-software-microservice-gateway
+# Microservices-Gateway-Service
 Gateway microservice
 
 Gateway's role is to verify a user. If user is a authenticate then forward for dashboard otherwise call for a login page
